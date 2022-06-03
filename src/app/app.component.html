@@ -26,7 +26,22 @@
       <label><b>Payment Date</b></label>
 
       <div>
-        {{ date }}
+        {{ date | date: "longDate" }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label>Payment Amount</label>
+      <input #amountChange (input)="onAmountChange(amountChange.value)" />
+    </div>
+
+    <div class="col">
+      <label><b>Payment Amount</b></label>
+
+      <div>
+        {{ amount | currency: "USD"}}
       </div>
     </div>
   </div>
